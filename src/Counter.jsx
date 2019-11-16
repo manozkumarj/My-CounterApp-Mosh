@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
+    value: this.props.value,
     tags: ["tag1", "tag2", "tag3", "tag4", "tag5"]
   };
 
@@ -24,13 +24,15 @@ class Counter extends Component {
   // }
 
   handleIncrement = product => {
-    console.log(product);
-    this.setState({ count: this.state.count + 1 });
+    // console.log(product);
+    this.setState({ value: this.state.value + 1 });
   };
 
   render() {
+    console.log("Props ", this.props);
     return (
       <div>
+        {this.props.children}
         <span className={this.getClass()}>{this.formatCount()}</span>
         <button
           className="btn btn-secondary m-2"
@@ -38,20 +40,18 @@ class Counter extends Component {
         >
           Increment
         </button>
-        {this.state.tags.length === 0 && <h5>Please create new tags</h5>}
-        {this.rederTags()}
       </div>
     );
   }
 
   getClass() {
-    let { count } = this.state;
+    let { value: count } = this.state;
     let classes = "btn m-2 btn-";
     return (classes += count === 0 ? "warning" : "primary");
   }
 
   formatCount() {
-    let { count } = this.state;
+    let { value: count } = this.state;
     return count === 0 ? "Zero" : count;
   }
 }

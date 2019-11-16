@@ -1,0 +1,26 @@
+import React, { Component } from "react";
+import Counter from "./Counter";
+
+class Counters extends Component {
+  state = {
+    counters: [
+      { id: 1, value: 4 },
+      { id: 2, value: 0 },
+      { id: 3, value: 0 },
+      { id: 4, value: 0 }
+    ]
+  };
+  render() {
+    return (
+      <div>
+        {this.state.counters.map(count => (
+          <Counter key={count.id} value={count.value}>
+            <h4>Counter #{count.id}</h4>
+          </Counter>
+        ))}
+      </div>
+    );
+  }
+}
+
+export default Counters;

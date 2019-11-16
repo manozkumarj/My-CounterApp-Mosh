@@ -1,8 +1,8 @@
 import React from "react";
-import Counter from "./Counter";
+import Counters from "./Counters";
 
 function App() {
-  return <Counter />;
+  return <Counters />;
 }
 
 export default App;
