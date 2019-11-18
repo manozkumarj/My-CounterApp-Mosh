@@ -14,6 +14,11 @@ class Counter extends Component {
     // }
   }
 
+  componentWillUnmount() {
+    // We can do any king of cleanups like if we set up like timers or listners, to avoid memory leaks
+    console.log("componentWillUnmount triggered");
+  }
+
   render() {
     // console.log("Props ", this.props);
     console.log("Counter - Rendered");
