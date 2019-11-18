@@ -13,14 +13,24 @@ class App extends Component {
     ]
   };
 
+  constructor() {
+    super();
+    console.log("App - constructor");
+  }
+
+  componentDidMount() {
+    // AJAX call
+    console.log("App - Mounted");
+  }
+
   handleDelete = counterId => {
-    console.log("handleDelete triggered -> ", counterId);
+    // console.log("handleDelete triggered -> ", counterId);
     let counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({ counters });
   };
 
   handleReset = () => {
-    console.log("handleReset triggered -> ");
+    // console.log("handleReset triggered -> ");
     let counter = this.state.counters.map(c => {
       c.value = 0;
       return c;
@@ -29,7 +39,7 @@ class App extends Component {
   };
 
   handleIncrement = counter => {
-    console.log("Triggered handleIncrement func ", counter);
+    // console.log("Triggered handleIncrement func ", counter);
     let counters = [...this.state.counters];
     let index = counters.indexOf(counter);
     counters[index] = { ...counter };
@@ -38,6 +48,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("App - Rendered");
     return (
       <React.Fragment>
         <Navbar

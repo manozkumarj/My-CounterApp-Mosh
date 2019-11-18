@@ -7,7 +7,8 @@ class Counter extends Component {
   // }
 
   render() {
-    console.log("Props ", this.props);
+    // console.log("Props ", this.props);
+    console.log("Counter - Rendered");
     return (
       <div>
         <h4>Count #{this.props.counter.id} </h4>
